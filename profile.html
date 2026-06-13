@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile | Chemical Society of Lesotho</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="scripts/main.js"></script>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.svg" alt="Chemical Society of Lesotho logo" class="logo">
+                <div>
+                    <p class="brand-title">Chemical Society of Lesotho</p>
+                    <p class="brand-subtitle">Making chemistry work for you</p>
+                </div>
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="resources.html">Resources</a>
+                <a href="profile.html" class="active">Profile</a>
+                <button id="user-logout" class="button button-outline">Logout</button>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section class="page-intro">
+                <h1>Your Profile</h1>
+                <p>Manage your membership, payment history, and event registrations.</p>
+            </section>
+
+            <div class="profile-grid">
+                <aside class="profile-sidebar">
+                    <nav class="profile-nav">
+                        <a href="#" class="profile-nav-link active" data-tab="overview">Overview</a>
+                        <a href="#" class="profile-nav-link" data-tab="membership">Membership</a>
+                        <a href="#" class="profile-nav-link" data-tab="payments">Payment History</a>
+                        <a href="#" class="profile-nav-link" data-tab="events">My Events</a>
+                        <a href="#" class="profile-nav-link" data-tab="settings">Settings</a>
+                    </nav>
+                </aside>
+
+                <section class="profile-content">
+                    <div id="overview-tab" class="profile-tab active">
+                        <h2>Welcome back, <span id="user-name">Member</span>!</h2>
+                        <div class="info-card-grid">
+                            <div class="info-card">
+                                <p class="label">Email</p>
+                                <p class="value" id="user-email"></p>
+                            </div>
+                            <div class="info-card">
+                                <p class="label">Role</p>
+                                <p class="value" id="user-role"></p>
+                            </div>
+                            <div class="info-card">
+                                <p class="label">Institution</p>
+                                <p class="value" id="user-institution"></p>
+                            </div>
+                            <div class="info-card">
+                                <p class="label">Member Since</p>
+                                <p class="value" id="user-joined"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="membership-tab" class="profile-tab">
+                        <h2>Membership Status</h2>
+                        <div class="status-panel">
+                            <p><strong>Membership Type:</strong> <span id="member-type"></span></p>
+                            <p><strong>Status:</strong> <span id="member-status" class="status-badge"></span></p>
+                            <p><strong>Payment Status:</strong> <span id="payment-status" class="status-badge"></span></p>
+                        </div>
+                        <div id="membership-benefits" class="benefits-list"></div>
+                    </div>
+
+                    <div id="payments-tab" class="profile-tab">
+                        <h2>Payment History</h2>
+                        <table id="payment-history-table" class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Membership Type</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Proof</th>
+                                </tr>
+                            </thead>
+                            <tbody></tbody>
+                        </table>
+                    </div>
+
+                    <div id="events-tab" class="profile-tab">
+                        <h2>Your Registered Events</h2>
+                        <div id="user-events-list" class="event-list"></div>
+                    </div>
+
+                    <div id="settings-tab" class="profile-tab">
+                        <h2>Profile Settings</h2>
+                        <form id="profile-settings-form" class="form-grid">
+                            <label class="full-width">
+                                Full Name
+                                <input type="text" name="fullName" id="setting-fullName">
+                            </label>
+                            <label class="full-width">
+                                Email
+                                <input type="email" name="email" id="setting-email">
+                            </label>
+                            <label class="full-width">
+                                Expertise / Interests
+                                <textarea name="expertise" id="setting-expertise" rows="4"></textarea>
+                            </label>
+                            <label class="full-width">
+                                Change Password
+                                <input type="password" name="newPassword" id="setting-newPassword" placeholder="Leave blank to keep current password" minlength="8">
+                            </label>
+                            <div class="form-actions full-width">
+                                <button type="submit" class="button">Save Changes</button>
+                            </div>
+                        </form>
+                        <div id="profile-message" class="form-message"></div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer class="site-footer">
+            <p>© 2026 Chemical Society of Lesotho.</p>
+            <p>Contact: members@chemicalsociety.ls</p>
+        </footer>
+    </div>
+</body>
+</html>

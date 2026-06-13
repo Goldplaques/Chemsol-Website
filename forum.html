@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion Forum | Chemical Society of Lesotho</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="scripts/main.js"></script>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.svg" alt="Chemical Society of Lesotho logo" class="logo">
+                <div>
+                    <p class="brand-title">Chemical Society of Lesotho</p>
+                    <p class="brand-subtitle">Making chemistry work for you</p>
+                </div>
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="lectures.html">Lectures</a>
+                <a href="resources.html">Resources</a>
+                <a href="forum.html" class="active">Forum</a>
+                <a href="profile.html" class="button button-outline">Profile</a>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section class="page-intro">
+                <h1>Discussion Forum</h1>
+                <p>Ask questions, share ideas, and connect with chemistry professionals and students.</p>
+            </section>
+
+            <button id="new-topic-btn" class="button" style="margin-bottom: 1.5rem;">+ Start New Discussion</button>
+
+            <div id="new-topic-form" class="form-panel" style="display:none; margin-bottom: 2rem;">
+                <h2>Start a New Discussion</h2>
+                <form id="forum-post-form" class="form-grid">
+                    <label class="full-width">
+                        Title
+                        <input type="text" name="title" placeholder="What's your question or topic?" required>
+                    </label>
+                    <label class="full-width">
+                        Category
+                        <select name="category" required>
+                            <option value="">Select category</option>
+                            <option value="Physical Chemistry">Physical Chemistry</option>
+                            <option value="Spectroscopy">Spectroscopy</option>
+                            <option value="Industrial">Industrial Chemistry</option>
+                            <option value="Career">Career & Jobs</option>
+                            <option value="Study Tips">Study Tips</option>
+                            <option value="General">General Discussion</option>
+                        </select>
+                    </label>
+                    <label class="full-width">
+                        Message
+                        <textarea name="message" rows="6" placeholder="Share your question or thoughts..." required></textarea>
+                    </label>
+                    <div class="form-actions full-width">
+                        <button type="submit" class="button">Post Discussion</button>
+                        <button type="button" class="button button-outline" id="cancel-topic">Cancel</button>
+                    </div>
+                </form>
+            </div>
+
+            <section id="forum-threads" class="forum-list"></section>
+        </main>
+
+        <footer class="site-footer">
+            <p>© 2026 Chemical Society of Lesotho.</p>
+            <p>Contact: community@chemicalsociety.ls</p>
+        </footer>
+    </div>
+</body>
+</html>

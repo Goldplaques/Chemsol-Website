@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Chemical Society of Lesotho</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="scripts/main.js"></script>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.svg" alt="Chemical Society of Lesotho logo" class="logo">
+                <div>
+                    <p class="brand-title">Chemical Society of Lesotho</p>
+                    <p class="brand-subtitle">Admin Portal</p>
+                </div>
+            </a>
+        </header>
+
+        <main class="container form-page">
+            <section class="form-panel form-panel-center">
+                <h1>Administrator Login</h1>
+                <p>Access the admin dashboard to manage members, events, and resources.</p>
+                <form id="admin-login-form" class="form-grid">
+                    <label class="full-width">
+                        Admin email
+                        <input type="email" name="adminEmail" required>
+                    </label>
+                    <label class="full-width">
+                        Password
+                        <input type="password" name="adminPassword" required minlength="8">
+                    </label>
+                    <div class="form-actions full-width">
+                        <button type="submit" class="button">Sign In</button>
+                    </div>
+                </form>
+                <div id="admin-login-message" class="form-message"></div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>© 2026 Chemical Society of Lesotho.</p>
+        </footer>
+    </div>
+</body>
+</html>

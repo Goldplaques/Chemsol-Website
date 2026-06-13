@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up | Chemical Society of Lesotho</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="scripts/main.js"></script>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.svg" alt="Chemical Society of Lesotho logo" class="logo">
+                <div>
+                    <p class="brand-title">Chemical Society of Lesotho</p>
+                    <p class="brand-subtitle">Making chemistry work for you</p>
+                </div>
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="resources.html">Resources</a>
+                <a href="members.html">Members</a>
+                <a href="signin.html" class="button button-outline">Sign In</a>
+            </nav>
+        </header>
+
+        <main class="container form-page">
+            <section class="form-panel">
+                <h1>Member Signup</h1>
+                <p>Register your membership and upload proof of payment. Your details are stored securely for administrator review.</p>
+                <form id="signup-form" class="form-grid" enctype="multipart/form-data">
+                    <label>
+                        Full name
+                        <input type="text" name="fullName" required>
+                    </label>
+                    <label>
+                        Email address
+                        <input type="email" name="email" required>
+                    </label>
+                    <label>
+                        Password
+                        <input type="password" name="password" required minlength="8">
+                    </label>
+                    <label>
+                        Role
+                        <select name="role" required>
+                            <option value="">Select role</option>
+                            <option value="Student">Student</option>
+                            <option value="Lecturer">Lecturer</option>
+                            <option value="Industry Professional">Industry Professional</option>
+                            <option value="Researcher">Researcher</option>
+                        </select>
+                    </label>
+                    <label>
+                        Institution / Company
+                        <input type="text" name="institution" required>
+                    </label>
+                    <label>
+                        Membership type
+                        <select name="membershipType" required>
+                            <option value="">Select package</option>
+                            <option value="Student Annual">Student Annual</option>
+                            <option value="Academic Annual">Academic Annual</option>
+                            <option value="Industry Sponsor">Industry Sponsor</option>
+                        </select>
+                    </label>
+                    <label class="full-width">
+                        Area of interest / expertise
+                        <textarea name="expertise" rows="4" placeholder="Spectroscopy, physical chemistry, process chemistry, teaching, lab management..."></textarea>
+                    </label>
+                    <label class="full-width">
+                        Upload proof of payment
+                        <input type="file" name="proofFile" accept="image/*,application/pdf" required>
+                        <small>Accepted formats: JPG, PNG, PDF</small>
+                    </label>
+                    <div class="form-actions full-width">
+                        <button type="submit" class="button">Submit membership</button>
+                        <a href="signin.html" class="link-secondary">Already a member? Sign in</a>
+                    </div>
+                </form>
+                <div id="form-message" class="form-message"></div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>© 2026 Chemical Society of Lesotho.</p>
+            <p>Sign up support: join@chemicalsociety.ls</p>
+        </footer>
+    </div>
+</body>
+</html>

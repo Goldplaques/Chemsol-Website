@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics & Reports | Chemical Society of Lesotho</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script defer src="scripts/analytics.js"></script>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.svg" alt="Chemical Society of Lesotho logo" class="logo">
+                <div>
+                    <p class="brand-title">Chemical Society of Lesotho</p>
+                    <p class="brand-subtitle">Making chemistry work for you</p>
+                </div>
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="admin-dashboard.html">Admin</a>
+                <a href="analytics.html" class="active">Analytics</a>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section class="page-intro">
+                <h1>Analytics & Community Insights</h1>
+                <p>Track growth, engagement, and community statistics.</p>
+            </section>
+
+            <section class="analytics-grid">
+                <div class="stat-card">
+                    <p class="stat-label">Total Members</p>
+                    <p class="stat-value" id="total-members">0</p>
+                    <p class="stat-change" id="member-change">↑ 12% this month</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Verified Members</p>
+                    <p class="stat-value" id="verified-members">0</p>
+                    <p class="stat-change" id="verify-change">↑ 8% this month</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Events Held</p>
+                    <p class="stat-value" id="events-count">0</p>
+                    <p class="stat-change">Latest: Spectroscopy Workshop</p>
+                </div>
+                <div class="stat-card">
+                    <p class="stat-label">Resources Published</p>
+                    <p class="stat-value" id="resources-count">0</p>
+                    <p class="stat-change">Notes & study guides</p>
+                </div>
+            </section>
+
+            <section class="charts-grid">
+                <div class="chart-container">
+                    <h3>Members by Role</h3>
+                    <canvas id="roleChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Membership Growth</h3>
+                    <canvas id="growthChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Event Attendance</h3>
+                    <canvas id="attendanceChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <h3>Resources by Category</h3>
+                    <canvas id="categoryChart"></canvas>
+                </div>
+            </section>
+
+            <section class="info-block">
+                <div>
+                    <h2>Community Highlights</h2>
+                    <ul>
+                        <li><strong>Active Members:</strong> Members who attended events in the last 30 days</li>
+                        <li><strong>Resources Uploaded:</strong> Chemistry notes, study guides, case studies</li>
+                        <li><strong>Forum Posts:</strong> Discussion threads and community engagement</li>
+                        <li><strong>Event Attendance Rate:</strong> Percentage of registered members who attended</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Key Metrics</h2>
+                    <ul>
+                        <li>📈 <strong>Engagement Rate:</strong> <span id="engagement-rate">0%</span></li>
+                        <li>💬 <strong>Avg Forum Posts/Week:</strong> <span id="forum-avg">0</span></li>
+                        <li>🎓 <strong>Avg Events/Month:</strong> <span id="events-avg">0</span></li>
+                        <li>📚 <strong>Resources Per Category:</strong> Check chart above</li>
+                    </ul>
+                </div>
+            </section>
+
+            <button id="download-report" class="button" style="margin-top: 2rem;">📊 Download Full Report (PDF)</button>
+        </main>
+
+        <footer class="site-footer">
+            <p>© 2026 Chemical Society of Lesotho.</p>
+            <p>Last updated: <span id="update-time"></span></p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Notes | Chemical Society of Lesotho</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script defer src="scripts/main.js"></script>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.svg" alt="Chemical Society of Lesotho logo" class="logo">
+                <div>
+                    <p class="brand-title">Chemical Society of Lesotho</p>
+                    <p class="brand-subtitle">Making chemistry work for you</p>
+                </div>
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="resources.html">Resources</a>
+                <a href="upload-notes.html" class="active">Upload Notes</a>
+                <a href="profile.html" class="button button-outline">Profile</a>
+            </nav>
+        </header>
+
+        <main class="container">
+            <section class="page-intro">
+                <h1>Share Your Chemistry Notes</h1>
+                <p>Upload lecture notes, study guides, or research summaries to help other members learn. Include LaTeX formatting for equations.</p>
+            </section>
+
+            <section class="form-panel" style="max-width: 800px;">
+                <h2>Upload Notes or Resources</h2>
+                <form id="upload-notes-form" class="form-grid" enctype="multipart/form-data">
+                    <label class="full-width">
+                        Note Title
+                        <input type="text" name="noteTitle" placeholder="e.g., Advanced Spectroscopy Notes" required>
+                    </label>
+                    <label>
+                        Category
+                        <select name="category" required>
+                            <option value="">Select category</option>
+                            <option value="Physical Chemistry">Physical Chemistry</option>
+                            <option value="Spectroscopy">Spectroscopy</option>
+                            <option value="Industrial Chemistry">Industrial Chemistry</option>
+                            <option value="General Chemistry">General Chemistry</option>
+                        </select>
+                    </label>
+                    <label>
+                        Level
+                        <select name="level" required>
+                            <option value="">Select level</option>
+                            <option value="100">1st Year (100)</option>
+                            <option value="200">2nd Year (200)</option>
+                            <option value="300">3rd Year (300)</option>
+                            <option value="400">4th Year (400)</option>
+                            <option value="Postgraduate">Postgraduate</option>
+                        </select>
+                    </label>
+                    <label class="full-width">
+                        Description / Summary
+                        <textarea name="description" rows="4" placeholder="Describe what these notes cover..." required></textarea>
+                    </label>
+                    <label class="full-width">
+                        Upload File (PDF, HTML, or Markdown with LaTeX)
+                        <input type="file" name="noteFile" accept=".pdf,.html,.md,.txt" required>
+                        <small>Tip: Use LaTeX format with $ for inline math and $$ for display math</small>
+                    </label>
+                    <div class="form-actions full-width">
+                        <button type="submit" class="button">Submit for Review</button>
+                    </div>
+                </form>
+                <div id="upload-message" class="form-message"></div>
+            </section>
+
+            <section class="info-block">
+                <div>
+                    <h2>LaTeX Support</h2>
+                    <p>All uploaded resources support LaTeX formatting. Use <code>$...$</code> for inline equations and <code>$$...$$</code> for display equations.</p>
+                </div>
+                <div>
+                    <h2>Approval Process</h2>
+                    <p>Your notes will be reviewed by moderators to ensure quality and accuracy before appearing in the library.</p>
+                </div>
+            </section>
+
+            <section class="page-intro" style="margin-top: 3rem;">
+                <h2>Your Uploaded Notes</h2>
+            </section>
+            <div id="user-notes-list" class="resource-grid"></div>
+        </main>
+
+        <footer class="site-footer">
+            <p>© 2026 Chemical Society of Lesotho.</p>
+            <p>Contact: resources@chemicalsociety.ls</p>
+        </footer>
+    </div>
+</body>
+</html>

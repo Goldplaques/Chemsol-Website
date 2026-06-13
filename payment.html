@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment | Chemical Society of Lesotho</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://js.stripe.com/v3/"></script>
+    <script defer src="scripts/payment.js"></script>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.svg" alt="Chemical Society of Lesotho logo" class="logo">
+                <div>
+                    <p class="brand-title">Chemical Society of Lesotho</p>
+                    <p class="brand-subtitle">Making chemistry work for you</p>
+                </div>
+            </a>
+        </header>
+
+        <main class="container form-page">
+            <section class="form-panel" style="max-width: 600px;">
+                <h1>Complete Your Payment</h1>
+                <p>Pay your membership fee securely using Stripe. All transactions are encrypted.</p>
+
+                <form id="payment-form" class="form-grid">
+                    <div class="full-width">
+                        <label>
+                            Membership Type
+                            <select id="membership-type" required>
+                                <option value="">Select membership</option>
+                                <option value="student">Student Annual - 500 LSL</option>
+                                <option value="academic">Academic Annual - 1000 LSL</option>
+                                <option value="industry">Industry Sponsor - 3000 LSL</option>
+                            </select>
+                        </label>
+                    </div>
+
+                    <div class="full-width">
+                        <p id="amount-display" style="font-size: 1.2em; font-weight: bold; color: var(--button);">Total: 0 LSL</p>
+                    </div>
+
+                    <div class="full-width">
+                        <label>
+                            Full Name
+                            <input type="text" id="name" placeholder="Your full name" required>
+                        </label>
+                    </div>
+
+                    <div class="full-width">
+                        <label>
+                            Email
+                            <input type="email" id="email" placeholder="Your email" required>
+                        </label>
+                    </div>
+
+                    <div class="full-width">
+                        <label>Card Details</label>
+                        <div id="card-element" style="border: 1px solid #d9e6f2; padding: 12px; border-radius: 8px; background: #fff;"></div>
+                    </div>
+
+                    <div id="card-errors" role="alert" class="form-message error" style="display:none;"></div>
+
+                    <div class="form-actions full-width">
+                        <button type="submit" class="button" id="submit-button">
+                            Pay Now
+                        </button>
+                    </div>
+                </form>
+
+                <div id="payment-message" class="form-message"></div>
+
+                <div style="margin-top: 2rem; padding: 1rem; background: #f7fbff; border-radius: 8px; border-left: 3px solid #0b5bbf;">
+                    <p><strong>💳 Secure Payment</strong></p>
+                    <p>We use Stripe to process payments securely. Your card information is never stored on our servers.</p>
+                    <p><strong>Prices:</strong></p>
+                    <ul>
+                        <li>Student: 500 LSL per year</li>
+                        <li>Academic: 1000 LSL per year</li>
+                        <li>Industry Sponsor: 3000 LSL per year</li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>© 2026 Chemical Society of Lesotho.</p>
+            <p>Questions? Contact: payments@chemicalsociety.ls</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In | Chemical Society of Lesotho</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="scripts/main.js"></script>
+</head>
+<body>
+    <div class="page-shell">
+        <header class="site-header">
+            <a href="index.html" class="brand">
+                <img src="assets/logo.svg" alt="Chemical Society of Lesotho logo" class="logo">
+                <div>
+                    <p class="brand-title">Chemical Society of Lesotho</p>
+                    <p class="brand-subtitle">Making chemistry work for you</p>
+                </div>
+            </a>
+            <nav class="site-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="events.html">Events</a>
+                <a href="resources.html">Resources</a>
+                <a href="members.html">Members</a>
+                <a href="signup.html" class="button button-outline">Sign Up</a>
+            </nav>
+        </header>
+
+        <main class="container form-page">
+            <section class="form-panel">
+                <h1>Member Sign In</h1>
+                <p>Use your email and password to access your membership profile and event registrations.</p>
+                <form id="signin-form" class="form-grid">
+                    <label>
+                        Email address
+                        <input type="email" name="email" required>
+                    </label>
+                    <label>
+                        Password
+                        <input type="password" name="password" required minlength="8">
+                    </label>
+                    <div class="form-actions full-width">
+                        <button type="submit" class="button">Sign In</button>
+                        <a href="signup.html" class="link-secondary">Need an account? Sign up</a>
+                    </div>
+                </form>
+                <div id="signin-message" class="form-message"></div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <p>© 2026 Chemical Society of Lesotho.</p>
+            <p>Sign in support: login@chemicalsociety.ls</p>
+        </footer>
+    </div>
+</body>
+</html>

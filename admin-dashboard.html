@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard | Chemical Society of Lesotho</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="scripts/admin.js"></script>
+</head>
+<body>
+    <div class="admin-layout">
+        <aside class="admin-sidebar">
+            <div class="sidebar-brand">
+                <h3>Admin Menu</h3>
+            </div>
+            <nav class="admin-nav">
+                <a href="#" class="admin-nav-link active" data-section="overview">Overview</a>
+                <a href="#" class="admin-nav-link" data-section="members">Members</a>
+                <a href="#" class="admin-nav-link" data-section="payments">Payments</a>
+                <a href="#" class="admin-nav-link" data-section="events">Events</a>
+                <a href="#" class="admin-nav-link" data-section="resources">Resources</a>
+                <a href="#" class="admin-nav-link" data-section="analytics">Analytics</a>
+                <a href="index.html" class="admin-nav-link">Back to Site</a>
+                <button id="admin-logout" class="admin-nav-link logout-btn">Logout</button>
+            </nav>
+        </aside>
+
+        <main class="admin-main">
+            <header class="admin-header">
+                <h1>Administration Dashboard</h1>
+                <p>Manage members, events, payments, and resources</p>
+            </header>
+
+            <section id="overview" class="admin-section active">
+                <h2>Overview</h2>
+                <div class="dashboard-stats">
+                    <div class="stat-card">
+                        <p class="stat-label">Total Members</p>
+                        <p class="stat-value" id="stat-members">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Pending Approvals</p>
+                        <p class="stat-value" id="stat-pending">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Verified Payments</p>
+                        <p class="stat-value" id="stat-payments">0</p>
+                    </div>
+                    <div class="stat-card">
+                        <p class="stat-label">Upcoming Events</p>
+                        <p class="stat-value" id="stat-events">0</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="members" class="admin-section">
+                <h2>Member Management</h2>
+                <div class="admin-toolbar">
+                    <input type="text" id="member-search" placeholder="Search members..." class="search-input">
+                    <button id="export-members" class="button button-secondary">Export CSV</button>
+                </div>
+                <table id="members-table" class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Institution</th>
+                            <th>Status</th>
+                            <th>Joined</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            <section id="payments" class="admin-section">
+                <h2>Payment Verification</h2>
+                <div class="admin-toolbar">
+                    <select id="payment-filter" class="form-control">
+                        <option value="">All statuses</option>
+                        <option value="pending">Pending</option>
+                        <option value="verified">Verified</option>
+                        <option value="rejected">Rejected</option>
+                    </select>
+                </div>
+                <table id="payments-table" class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Member</th>
+                            <th>Email</th>
+                            <th>Membership Type</th>
+                            <th>Proof File</th>
+                            <th>Status</th>
+                            <th>Submitted</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            <section id="events" class="admin-section">
+                <h2>Event Management</h2>
+                <button id="add-event-btn" class="button">+ Create Event</button>
+                <div id="event-form" class="form-panel" style="display:none; margin-top: 1rem;">
+                    <h3>New Event</h3>
+                    <form id="new-event-form" class="form-grid">
+                        <label class="full-width">
+                            Event Title
+                            <input type="text" name="title" required>
+                        </label>
+                        <label>
+                            Date
+                            <input type="date" name="date" required>
+                        </label>
+                        <label>
+                            Type
+                            <select name="type" required>
+                                <option value="workshop">Workshop</option>
+                                <option value="lecture">Lecture</option>
+                                <option value="networking">Networking</option>
+                            </select>
+                        </label>
+                        <label class="full-width">
+                            Location
+                            <input type="text" name="location" required>
+                        </label>
+                        <label class="full-width">
+                            Description
+                            <textarea name="summary" rows="4" required></textarea>
+                        </label>
+                        <div class="form-actions full-width">
+                            <button type="submit" class="button">Save Event</button>
+                            <button type="button" class="button button-outline" id="cancel-event">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                <table id="events-table" class="admin-table" style="margin-top: 1rem;">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Date</th>
+                            <th>Type</th>
+                            <th>Location</th>
+                            <th>Attendees</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            <section id="resources" class="admin-section">
+                <h2>Resource Management</h2>
+                <button id="add-resource-btn" class="button">+ Upload Resource</button>
+                <div id="resource-form" class="form-panel" style="display:none; margin-top: 1rem;">
+                    <h3>Upload Resource</h3>
+                    <form id="new-resource-form" class="form-grid" enctype="multipart/form-data">
+                        <label class="full-width">
+                            Resource Title
+                            <input type="text" name="title" required>
+                        </label>
+                        <label class="full-width">
+                            Category
+                            <select name="category" required>
+                                <option value="">Select category</option>
+                                <option value="Physical Chemistry">Physical Chemistry</option>
+                                <option value="Spectroscopy">Spectroscopy</option>
+                                <option value="Industrial Chemistry">Industrial Chemistry</option>
+                                <option value="Computing">Computing & Tools</option>
+                            </select>
+                        </label>
+                        <label class="full-width">
+                            File
+                            <input type="file" name="resourceFile" accept=".pdf,.html,.txt,.md" required>
+                        </label>
+                        <label class="full-width">
+                            Description
+                            <textarea name="description" rows="3"></textarea>
+                        </label>
+                        <div class="form-actions full-width">
+                            <button type="submit" class="button">Upload</button>
+                            <button type="button" class="button button-outline" id="cancel-resource">Cancel</button>
+                        </div>
+                    </form>
+                </div>
+                <table id="resources-table" class="admin-table" style="margin-top: 1rem;">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Category</th>
+                            <th>File</th>
+                            <th>Uploaded</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </section>
+
+            <section id="analytics" class="admin-section">
+                <h2>Analytics & Reports</h2>
+                <div class="analytics-grid">
+                    <div class="chart-card">
+                        <h3>Members by Role</h3>
+                        <div id="members-by-role"></div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Membership Growth</h3>
+                        <div id="membership-growth"></div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Event Attendance</h3>
+                        <div id="event-attendance"></div>
+                    </div>
+                </div>
+                <button id="download-report" class="button">Download Full Report (PDF)</button>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
